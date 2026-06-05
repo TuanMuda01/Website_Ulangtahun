@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Niswatun Hidayah 🎂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --pink: #FFB6C1;
+      --pink-dark: #FF85A1;
+      --lavender: #E6E6FA;
+      --lavender-dark: #DDA0DD;
+      --peach: #FFDAB9;
+      --blush: #FFF0F5;
+      --cream: #FFFAF0;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #FFF0F5 0%, #E6E6FA 50%, #FFEFD5 100%);
+      cursor: default;
+    }
+
+    .romantic-font { font-family: 'Pacifico', cursive; }
+
+    /* ---- FLOATING HEARTS ---- */
+    .floating-hearts {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 1; overflow: hidden;
+    }
+    .heart {
+      position: absolute; font-size: 20px;
+      animation: floatUp 15s infinite ease-in; opacity: 0;
+    }
+    .heart:nth-child(1)  { left:10%; animation-delay:0s;   font-size:25px; }
+    .heart:nth-child(2)  { left:20%; animation-delay:2s;   font-size:18px; }
+    .heart:nth-child(3)  { left:30%; animation-delay:4s;   font-size:22px; }
+    .heart:nth-child(4)  { left:40%; animation-delay:6s;   font-size:20px; }
+    .heart:nth-child(5)  { left:50%; animation-delay:8s;   font-size:24px; }
+    .heart:nth-child(6)  { left:60%; animation-delay:10s;  font-size:19px; }
+    .heart:nth-child(7)  { left:70%; animation-delay:12s;  font-size:21px; }
+    .heart:nth-child(8)  { left:80%; animation-delay:14s;  font-size:23px; }
+    .heart:nth-child(9)  { left:90%; animation-delay:1s;   font-size:20px; }
+    .heart:nth-child(10) { left:15%; animation-delay:3s;   font-size:26px; }
+    .heart:nth-child(11) { left:25%; animation-delay:5s;   font-size:18px; }
+    .heart:nth-child(12) { left:35%; animation-delay:7s;   font-size:22px; }
+    .heart:nth-child(13) { left:45%; animation-delay:9s;   font-size:20px; }
+    .heart:nth-child(14) { left:55%; animation-delay:11s;  font-size:24px; }
+    .heart:nth-child(15) { left:65%; animation-delay:13s;  font-size:19px; }
+
+    @keyframes floatUp {
+      0%   { bottom:-10%; opacity:0; transform:translateX(0) rotate(0deg); }
+      10%  { opacity:0.8; }
+      50%  { opacity:0.6; transform:translateX(50px) rotate(180deg); }
+      100% { bottom:110%; opacity:0; transform:translateX(-50px) rotate(360deg); }
+    }
+
+    /* ---- CONFETTI ---- */
+    .confetti {
+      position: fixed; width: 10px; height: 10px;
+      top: -10%; z-index: 9999;
+      animation: confettiFall 3s linear forwards;
+    }
+    @keyframes confettiFall {
+      0%   { transform:translateY(0) rotate(0deg); opacity:1; }
+      100% { transform:translateY(100vh) rotate(720deg); opacity:0; }
+    }
+
+    /* ---- MUSIC PLAYER ---- */
+    .music-player {
+      position: fixed; bottom: 30px; right: 30px; z-index: 1000;
+      background: linear-gradient(135deg, #FFB6C1, #DDA0DD);
+      width: 60px; height: 60px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; border: none;
+      box-shadow: 0 8px 20px rgba(255,182,193,0.4);
+      transition: all 0.3s ease;
+    }
+    .music-player:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(255,182,193,0.6); }
+    .music-player svg { width: 28px; height: 28px; fill: white; }
+
+    /* ---- SECTIONS ---- */
+    section {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 60px 20px;
+      position: relative; z-index: 2;
+    }
+
+    /* ---- ANIMATIONS ---- */
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-20px); }
+    }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(40px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity:0; transform:scale(0.5); }
+      to   { opacity:1; transform:scale(1); }
+    }
+    .animate-float   { animation: float 3s ease-in-out infinite; }
+    .anim-fadeinup   { opacity:0; animation: fadeInUp 1s ease-out forwards; }
+    .anim-scalein    { opacity:0; animation: scaleIn 1s ease-out forwards; }
+    .delay-05 { animation-delay: 0.5s; }
+    .delay-1  { animation-delay: 1s; }
+    .delay-15 { animation-delay: 1.5s; }
+
+    /* scroll-reveal */
+    .reveal { opacity:0; transform:translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* ---- BUTTONS ---- */
+    .btn-romantic {
+      background: linear-gradient(135deg, #FFB6C1, #DDA0DD);
+      color: white; padding: 14px 40px; border-radius: 50px;
+      border: none; font-size: 18px; font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer; transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(255,182,193,0.4);
+      display: inline-block;
+    }
+    .btn-romantic:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(255,182,193,0.6); }
+    .btn-romantic:active { transform: translateY(-1px); }
+
+    /* ---- CARDS ---- */
+    .romantic-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 30px; padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,182,193,0.3);
+    }
+
+    /* ---- CAROUSEL ---- */
+    .carousel-wrap {
+      position: relative; width:100%; max-width:380px; margin:0 auto;
+    }
+    .carousel-track-outer {
+      border-radius: 24px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      border: 10px solid white;
+      background: #f5f5f5;
+      aspect-ratio: 3/4;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex; width: 100%; height: 100%;
+      transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+    }
+    .carousel-slide {
+      min-width: 100%; height: 100%; position: relative; flex-shrink: 0;
+    }
+    .carousel-slide img {
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+    .carousel-slide::before {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(255,182,193,0.15), rgba(230,230,250,0.15));
+      z-index:1; pointer-events:none;
+    }
+    .photo-caption {
+      position:absolute; bottom:0; left:0; right:0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+      padding: 28px 16px 14px; z-index:10;
+      color:white; text-align:center; font-size:15px; font-weight:600;
+    }
+    .carousel-btn {
+      position:absolute; top:50%; transform:translateY(-50%);
+      background: rgba(255,255,255,0.85); border:none; border-radius:50%;
+      width:38px; height:38px; font-size:18px; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: all 0.2s ease; z-index:20;
+    }
+    .carousel-btn:hover { background:white; transform:translateY(-50%) scale(1.1); }
+    .carousel-btn.prev { left:-18px; }
+    .carousel-btn.next { right:-18px; }
+    .carousel-dots {
+      display:flex; justify-content:center; gap:8px; margin-top:16px;
+    }
+    .dot {
+      width:10px; height:10px; border-radius:50%;
+      background: rgba(221,160,221,0.4); cursor:pointer;
+      transition: all 0.3s ease; border:none;
+    }
+    .dot.active { background: #DDA0DD; transform:scale(1.3); }
+    .carousel-counter {
+      text-align:center; font-size:13px; color:#9ca3af; margin-top:6px;
+    }
+
+    /* ---- CAKE POPUP ---- */
+    .cake-overlay {
+      position:fixed; inset:0; z-index:10000;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(0,0,0,0.45); backdrop-filter:blur(4px);
+      opacity:0; pointer-events:none; transition: opacity 0.3s ease;
+    }
+    .cake-overlay.show { opacity:1; pointer-events:all; }
+    .cake-popup {
+      background: rgba(255,255,255,0.97);
+      border-radius: 28px; padding: 32px 36px; text-align:center;
+      box-shadow: 0 24px 80px rgba(255,182,193,0.45);
+      border: 2px solid rgba(255,182,193,0.4);
+      max-width: 320px; width:90%;
+      transform: scale(0.5) translateY(40px);
+      transition: transform 0.4s cubic-bezier(.175,.885,.32,1.275);
+    }
+    .cake-overlay.show .cake-popup { transform: scale(1) translateY(0); }
+    .cake-svg-wrap { font-size:0; margin-bottom:8px; }
+    .cake-title {
+      font-family:'Pacifico',cursive; font-size:1.4rem;
+      color:#DDA0DD; margin-bottom:6px;
+    }
+    .cake-sub { font-size:0.9rem; color:#6b7280; margin-bottom:18px; line-height:1.5; }
+    .cake-close {
+      background:linear-gradient(135deg,#FFB6C1,#DDA0DD);
+      color:white; border:none; border-radius:50px;
+      padding:10px 28px; font-size:15px; font-weight:600;
+      font-family:'Poppins',sans-serif; cursor:pointer;
+      transition:all 0.3s ease;
+    }
+    .cake-close:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(255,182,193,0.5); }
+
+    /* candle flame animation */
+    @keyframes flicker {
+      0%,100% { transform: scaleY(1) scaleX(1) rotate(-2deg); }
+      25%      { transform: scaleY(1.1) scaleX(0.9) rotate(2deg); }
+      50%      { transform: scaleY(0.95) scaleX(1.05) rotate(-1deg); }
+      75%      { transform: scaleY(1.08) scaleX(0.95) rotate(3deg); }
+    }
+    .flame { animation: flicker 0.6s ease-in-out infinite; transform-origin: bottom center; }
+    @keyframes floatSparkle {
+      0%   { opacity:1; transform:translateY(0) scale(1); }
+      100% { opacity:0; transform:translateY(-30px) scale(0.3); }
+    }
+    .cake-sparkle { animation: floatSparkle 1.2s ease-out infinite; }
+    .cake-sparkle:nth-child(2) { animation-delay:0.4s; }
+    .cake-sparkle:nth-child(3) { animation-delay:0.8s; }
+
+    /* ---- QUIZ ---- */
+    .quiz-option {
+      background: white; border: 2px solid #FFB6C1;
+      padding: 15px 25px; border-radius: 15px;
+      cursor: pointer; transition: all 0.3s ease;
+      width: 100%; text-align: left;
+      font-size: 16px; font-weight: 500;
+      color: #4A4A4A; font-family: 'Poppins', sans-serif;
+      margin-bottom: 12px; display: block;
+    }
+    .quiz-option:hover:not(:disabled) {
+      background: linear-gradient(135deg, #FFB6C1, #DDA0DD);
+      color: white; transform: translateX(10px); border-color: #DDA0DD;
+    }
+    .quiz-option.correct { background: linear-gradient(135deg,#90EE90,#98FB98); color:white; border-color:#90EE90; }
+    .quiz-option.wrong   { background: linear-gradient(135deg,#FFB6C1,#FF69B4); color:white; border-color:#FF69B4; opacity:0.6; }
+    .quiz-option:disabled { cursor: not-allowed; }
+
+    .progress-bar-wrap { width:100%; background:#e5e7eb; border-radius:9999px; height:8px; margin-bottom:8px; }
+    .progress-bar-fill {
+      background: linear-gradient(to right, #FFB6C1, #DDA0DD);
+      height:8px; border-radius:9999px; transition: width 0.3s ease;
+    }
+
+    /* ---- HERO TYPOGRAPHY ---- */
+    .hero-title { font-size: clamp(2.5rem, 10vw, 5rem); color: var(--lavender-dark); }
+    .hero-name  { font-size: clamp(2rem, 8vw, 3.5rem); color: var(--pink); font-weight:700; }
+    .hero-sub   { font-size: clamp(1.1rem, 4vw, 1.5rem); color: #6b7280; margin-bottom: 2rem; }
+    .section-title { font-size: clamp(1.8rem, 6vw, 3rem); color: var(--lavender-dark); text-align:center; margin-bottom: 3rem; }
+
+    /* ---- LAYOUT HELPERS ---- */
+    .center { text-align:center; }
+    .max-w-3 { max-width: 760px; width:100%; margin: 0 auto; }
+    .max-w-4 { max-width: 900px; width:100%; margin: 0 auto; }
+    .mt-8  { margin-top:2rem; }
+    .mt-12 { margin-top:3rem; }
+    .mb-6  { margin-bottom:1.5rem; }
+    .mb-8  { margin-bottom:2rem; }
+    .flex-gap { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+    .whitespace-pre { white-space: pre-line; line-height:1.9; color:#4b5563; font-size:clamp(0.9rem,2.5vw,1.05rem); }
+    .quiz-meta { display:flex; justify-content:space-between; font-size:13px; color:#6b7280; margin-bottom:6px; }
+    .quiz-q { font-size: clamp(1.1rem,3vw,1.4rem); font-weight:600; color:#1f2937; margin-bottom:1.5rem; }
+    .score-emoji { font-size: 4rem; margin-bottom:1rem; }
+    .score-big { font-size: clamp(1.4rem,4vw,1.8rem); font-weight:700; color:#1f2937; }
+    .text-muted { color:#6b7280; font-size: clamp(0.9rem,2.5vw,1.05rem); }
+    .closing-msg { font-size: clamp(1rem,3vw,1.2rem); color:#374151; line-height:1.8; }
+    .made-with { font-size:13px; color:#9ca3af; margin-top:3rem; }
+
+    /* ---- RESPONSIVE ---- */
+    @media(max-width:768px) {
+      section { padding:40px 15px; }
+      .romantic-card { padding:25px; }
+      .btn-romantic { padding:12px 28px; font-size:15px; }
+      .music-player { width:50px; height:50px; bottom:20px; right:20px; }
+      .music-player svg { width:22px; height:22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating Hearts -->
+<div class="floating-hearts">
+  <div class="heart">💕</div><div class="heart">💕</div><div class="heart">💕</div>
+  <div class="heart">💕</div><div class="heart">💕</div><div class="heart">💕</div>
+  <div class="heart">💕</div><div class="heart">💕</div><div class="heart">💕</div>
+  <div class="heart">💕</div><div class="heart">💕</div><div class="heart">💕</div>
+  <div class="heart">💕</div><div class="heart">💕</div><div class="heart">💕</div>
+</div>
+
+<!-- Confetti Container -->
+<div id="confetti-container"></div>
+
+<!-- Music Player -->
+<button class="music-player" id="musicBtn" onclick="toggleMusic()" title="Play/Pause Musik">
+  <svg id="iconPlay" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+  <svg id="iconPause" viewBox="0 0 24 24" style="display:none"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
+</button>
+<audio id="audio" loop>
+  <!-- 
+    CARA MENAMBAHKAN MUSIK:
+    Letakkan file music.mp3 di folder yang sama dengan file HTML ini,
+    lalu uncomment baris di bawah:
+  -->
+    <source src="Happy Birthday (Piano Version).mp3" type="audio/mpeg">
+  
+</audio>
+
+<!-- ==================== SECTION 1: HERO ==================== -->
+<section style="background:linear-gradient(135deg,#FFF0F5 0%,#E6E6FA 50%,#FFEFD5 100%)">
+  <div class="max-w-4 center">
+    <div class="anim-fadeinup">
+      <h1 class="romantic-font hero-title animate-float" style="margin-bottom:1.5rem">Happy Birthday! 🎉</h1>
+    </div>
+    <div class="anim-fadeinup delay-05">
+      <h2 class="hero-name" style="margin-bottom:.75rem">Niswatun Hidayah</h2>
+      <p class="hero-sub">✨ Ciieeeee 25 Tahun nih! 🥰😘 ✨</p>
+      <p class="hero-sub">✨ Bismillah Penuh Kebahagiaan ✨</p>
+    </div>
+    <div class="anim-fadeinup delay-1">
+      <p style="font-size:clamp(1rem,3vw,1.15rem);color:#6b7280;max-width:600px;margin:0 auto 2.5rem;line-height:1.7">
+        Hari ini adalah hari spesial untuk dede. Selamat datang di website yang dibuat khusus untuk merayakan hari istimewamu cah ayuuu! 💖
+      </p>
+      <button class="btn-romantic" onclick="scrollToSection(1)">🎁 Buka Kejutanmu</button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 2: PHOTO ==================== -->
+<section id="sec1" style="background:linear-gradient(135deg,#FFEFD5 0%,#FFF0F5 50%,#E6E6FA 100%)">
+  <div class="max-w-4 center">
+    <h2 class="romantic-font section-title reveal">Foto Moodmu 😏📸</h2>
+    <div class="reveal">
+      <!--
+        CARA MENGGANTI FOTO CAROUSEL:
+        Ganti setiap src="..." dengan path foto kamu.
+        Contoh: src="foto1.jpg" (letakkan foto di folder yang sama)
+        ATAU gunakan URL foto online.
+        Ubah juga teks caption di .photo-caption setiap slide.
+      -->
+      <div class="carousel-wrap">
+        <div class="carousel-track-outer">
+          <div class="carousel-track" id="carouselTrack">
+
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+              <img src="Image1.jpeg" alt="Foto 1" />
+              <div class="photo-caption">Niswatun Hidayah ✨</div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+              <img src="Image2.jpeg" alt="Foto 2" />
+              <div class="photo-caption">Pekerja Keras 💪</div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+              <img src="Image3.jpeg" alt="Foto 3" />
+              <div class="photo-caption">Suka Random 🥴</div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-slide">
+              <img src="Image4.jpeg" alt="Foto 4" />
+              <div class="photo-caption">Seneng njajan 😜</div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="carousel-slide">
+              <img src="Image5.jpeg" alt="Foto 5" />
+              <div class="photo-caption">Ngambek deh 😠</div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="carousel-slide">
+              <img src="Image6.jpeg" alt="Foto 6" />
+              <div class="photo-caption">Niswa N nya apa? Nangis 😢</div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div class="carousel-slide">
+              <img src="Image7.jpeg" alt="Foto 7" />
+              <div class="photo-caption">Mood baik Manyuunn 😗</div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div class="carousel-slide">
+              <img src="Image8.jpeg" alt="Foto 8" />
+              <div class="photo-caption">Ukhtiii 🙆‍♀️🥰</div>
+            </div>
+
+            <!-- Slide 9 -->
+            <div class="carousel-slide">
+              <img src="Image9.jpeg" alt="Foto 9" />
+              <div class="photo-caption">Masyaallah cantiknyoo 😍</div>
+            </div>
+
+            <!-- Slide 10 -->
+            <div class="carousel-slide">
+              <img src="Image10.jpeg" alt="Foto 10" />
+              <div class="photo-caption">Okeee 🙂👍</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Prev / Next buttons -->
+        <button class="carousel-btn prev" onclick="carouselMove(-1)">&#8249;</button>
+        <button class="carousel-btn next" onclick="carouselMove(1)">&#8250;</button>
+      </div>
+
+      <!-- Dots -->
+      <div class="carousel-dots" id="carouselDots"></div>
+      <div class="carousel-counter" id="carouselCounter">1 / 10</div>
+    </div>
+    <div class="mt-8 reveal">
+      <button class="btn-romantic" onclick="scrollToSection(2)">💌 Baca Pesan Spesial</button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 3: LOVE LETTER ==================== -->
+<section id="sec2" style="background:linear-gradient(135deg,#E6E6FA 0%,#FFEFD5 50%,#FFF0F5 100%)">
+  <div class="max-w-3">
+    <h2 class="romantic-font section-title reveal">Surat Untuk Kamu 💕</h2>
+    <div class="romantic-card reveal">
+      <p class="whitespace-pre" id="loveLetter"></p>
+    </div>
+    <div class="mt-8 center reveal">
+      <button class="btn-romantic" onclick="scrollToSection(3)">🎊 Lanjut ke Perayaan!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 4: CLOSING ==================== -->
+<section id="sec3" style="background:linear-gradient(135deg,#FFEFD5 0%,#FFF0F5 50%,#E6E6FA 100%)">
+  <div class="max-w-3 center">
+    <h2 class="romantic-font hero-title animate-float reveal" style="margin-bottom:1rem">🎂 Happy Birthday 🎂</h2>
+    <h3 class="hero-name reveal mb-8">Niswatun Hidayah!</h3>
+
+    <div class="romantic-card reveal mb-8">
+      <p class="closing-msg">
+        Semoga semua harapan dan impianmu di tahun ini terwujud. Semoga selalu bahagia, sehat, sukses dalam segala hal yang dede lakukan, dan semoga kita lekas dipertemukan ke jenjang yang lebih serius, Aamiin Ya Rabb 🤲. ✨
+      </p>
+      <p class="text-muted mt-8">
+        Terima kasih sudah menjadi bagian indah dalam hidup ini. Selamat ulang tahun yang ke-25 cah ayuuuu! 😚💖
+      </p>
+    </div>
+
+    <div class="reveal">
+      <button class="btn-romantic" style="font-size:1.3rem;padding:16px 50px" onclick="createConfetti();showCakePopup()">🎉 Rayakan! 🎉</button>
+    </div>
+
+    <div class="made-with reveal">
+      <p>Made with 💕 for Niswatun Hidayah</p>
+      <p style="margin-top:4px;font-size:11px">June 6, 2025 • 25th Birthday</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CAKE POPUP ==================== -->
+<div class="cake-overlay" id="cakeOverlay" onclick="hideCakePopup(event)">
+  <div class="cake-popup">
+    <div class="cake-svg-wrap">
+      <svg width="120" height="130" viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sparkles -->
+        <g>
+          <circle class="cake-sparkle" cx="20" cy="18" r="3" fill="#FFD700"/>
+          <circle class="cake-sparkle" cx="100" cy="14" r="3" fill="#FFB6C1"/>
+          <circle class="cake-sparkle" cx="60" cy="8" r="2.5" fill="#DDA0DD"/>
+        </g>
+        <!-- Candles -->
+        <!-- Candle 1 -->
+        <rect x="28" y="42" width="8" height="20" rx="3" fill="#FFB6C1"/>
+        <ellipse class="flame" cx="32" cy="40" rx="5" ry="7" fill="#FFD700"/>
+        <ellipse class="flame" cx="32" cy="38" rx="2.5" ry="4" fill="#FF6600"/>
+        <!-- Candle 2 -->
+        <rect x="56" y="36" width="8" height="20" rx="3" fill="#DDA0DD"/>
+        <ellipse class="flame" cx="60" cy="34" rx="5" ry="7" fill="#FFD700"/>
+        <ellipse class="flame" cx="60" cy="32" rx="2.5" ry="4" fill="#FF6600"/>
+        <!-- Candle 3 -->
+        <rect x="84" y="42" width="8" height="20" rx="3" fill="#FFDAB9"/>
+        <ellipse class="flame" cx="88" cy="40" rx="5" ry="7" fill="#FFD700"/>
+        <ellipse class="flame" cx="88" cy="38" rx="2.5" ry="4" fill="#FF6600"/>
+        <!-- Top tier -->
+        <rect x="30" y="60" width="60" height="26" rx="10" fill="#FFB6C1"/>
+        <rect x="30" y="72" width="60" height="7" fill="rgba(255,255,255,0.35)"/>
+        <!-- Decoration dots top -->
+        <circle cx="45" cy="67" r="3" fill="white"/>
+        <circle cx="60" cy="65" r="3" fill="white"/>
+        <circle cx="75" cy="67" r="3" fill="white"/>
+        <!-- Bottom tier -->
+        <rect x="14" y="84" width="92" height="36" rx="12" fill="#DDA0DD"/>
+        <rect x="14" y="96" width="92" height="10" fill="rgba(255,255,255,0.3)"/>
+        <!-- Decoration bottom -->
+        <circle cx="30" cy="92" r="4" fill="#FFB6C1"/>
+        <circle cx="50" cy="90" r="4" fill="#FFDAB9"/>
+        <circle cx="70" cy="90" r="4" fill="#FFB6C1"/>
+        <circle cx="90" cy="92" r="4" fill="#FFDAB9"/>
+        <!-- Base plate -->
+        <ellipse cx="60" cy="121" rx="52" ry="8" fill="#E6E6FA"/>
+        <ellipse cx="60" cy="119" rx="52" ry="7" fill="#F0E6FF"/>
+      </svg>
+    </div>
+    <h3 class="cake-title">Happy Birthday! 🎂</h3>
+    <p class="cake-sub">Semoga semua harapan dan impianmu<br>terwujud di hari istimewa ini! 💕</p>
+    <button class="cake-close" onclick="hideCakePopup()">Terima Kasih! 🥰</button>
+  </div>
+</div>
+
+<script>
+  // ==========================================
+  // DATA
+  // ==========================================
+  const LOVE_LETTER_TEXT = `Yaumul milad, Barakallahu fii umrik yang ke-25 nggeh cah ayuuu 🥰❤️
+
+Hari ini adalah hari yang sangat spesial, karena di umur ini tepat seprempat abad umurmu berada di dunia ini.
+
+Melalui Website kecil ini mas cukup mau mengatakan bahwa sangat bersyukur dan terimakasih bisa mengenal dan memiliki seseorang seperti dede dalam hidup ini. Setiap hari bersamamu adalah petualangan roller coaster yang penuh emosi dan fase tersebut adalah dinamika hidup yang berputar.
+
+Dede adalah seseorang yang luar biasa penuh dengan hal positif, pribadi yang lemah lembut walopun suarane agak banter dikit sih! tapi dengan melihat senyummu membuat segalanya lebih indah, dan kehadiranmu yang membuat hidup ini lebih bermakna.
+
+Di hari istimewamu ini, aku berdoa semoga semua impian dan harapanmu tercapai. Semoga tahun ini membawa lebih banyak kebahagiaan, kesuksesan, dan momen-momen berharga yang akan kita lalui bersama.
+
+Terima kasih sudah menjadi bagian terpenting dalam hidup ini. Mas berharap bisa terus bersama dan membuat lebih banyak kenangan indah bersamamu.
+
+Selamat ulang tahun, nggeh cah ayuuu! Semoga hari ini seindah dirimu. 🎂✨
+
+Dengan cinta,
+Your Special Someone 💕`;
+
+  // ==========================================
+  // INIT
+  // ==========================================
+  document.getElementById('loveLetter').textContent = LOVE_LETTER_TEXT;
+
+  // ==========================================
+  // SCROLL TO SECTION
+  // ==========================================
+  const sections = ['sec1','sec2','sec3'];
+  function scrollToSection(i) {
+    const el = document.getElementById(sections[i - 1]);
+    if (el) el.scrollIntoView({ behavior:'smooth' });
+  }
+
+  // ==========================================
+  // SCROLL REVEAL
+  // ==========================================
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => observer.observe(el));
+
+  // ==========================================
+  // MUSIC
+  // ==========================================
+  const audio = document.getElementById('audio');
+  let isPlaying = false;
+  function toggleMusic() {
+    if (isPlaying) {
+      audio.pause();
+      document.getElementById('iconPlay').style.display = '';
+      document.getElementById('iconPause').style.display = 'none';
+    } else {
+      audio.play().catch(() => alert('Tidak ada file musik. Letakkan music.mp3 di folder yang sama lalu coba lagi.'));
+      document.getElementById('iconPlay').style.display = 'none';
+      document.getElementById('iconPause').style.display = '';
+    }
+    isPlaying = !isPlaying;
+  }
+
+  // ==========================================
+  // CONFETTI
+  // ==========================================
+  function createConfetti() {
+    const colors = ['#FFB6C1','#DDA0DD','#FFDAB9','#E6E6FA','#FFC0CB'];
+    const container = document.getElementById('confetti-container');
+    for (let i = 0; i < 100; i++) {
+      setTimeout(() => {
+        const c = document.createElement('div');
+        c.className = 'confetti';
+        c.style.left = Math.random() * 100 + '%';
+        c.style.background = colors[Math.floor(Math.random() * colors.length)];
+        c.style.animationDelay = Math.random() * 2 + 's';
+        c.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+        container.appendChild(c);
+        setTimeout(() => c.remove(), 3500);
+      }, i * 30);
+    }
+  }
+
+  // ==========================================
+  // CAROUSEL
+  // ==========================================
+  const TOTAL_SLIDES = 10;
+  let currentSlide = 0;
+  let autoplayTimer = null;
+
+  // Build dots
+  const dotsWrap = document.getElementById('carouselDots');
+  for (let i = 0; i < TOTAL_SLIDES; i++) {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goToSlide(i);
+    dotsWrap.appendChild(d);
+  }
+
+  function updateCarousel() {
+    document.getElementById('carouselTrack').style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    document.getElementById('carouselCounter').textContent = `${currentSlide + 1} / ${TOTAL_SLIDES}`;
+  }
+
+  function carouselMove(dir) {
+    currentSlide = (currentSlide + dir + TOTAL_SLIDES) % TOTAL_SLIDES;
+    updateCarousel();
+    resetAutoplay();
+  }
+
+  function goToSlide(i) {
+    currentSlide = i;
+    updateCarousel();
+    resetAutoplay();
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(() => carouselMove(1), 4000);
+  }
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  const track = document.getElementById('carouselTrack');
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive:true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) carouselMove(diff > 0 ? 1 : -1);
+  });
+
+  resetAutoplay();
+
+  // ==========================================
+  // CAKE POPUP
+  // ==========================================
+  function showCakePopup() {
+    setTimeout(() => {
+      document.getElementById('cakeOverlay').classList.add('show');
+    }, 400);
+  }
+
+  function hideCakePopup(event) {
+    if (!event || event.target === document.getElementById('cakeOverlay') || event.currentTarget === event.target) {
+      document.getElementById('cakeOverlay').classList.remove('show');
+    }
+  }
+</script>
+</body>
+</html>
